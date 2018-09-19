@@ -3,16 +3,23 @@ Problem description
  - https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/
 
 score
- - 72%
+ - 100%
 """
 
 
 def solution(X, A):
-    pos = [0] * X
+    positions = {}
     for i, num in enumerate(A):
-        if num <= X:
-            pos[num - 1] += 1
-        if not 0 in pos:
-            return i
+        if num in positions.keys():
+            pass
+        else:
+            positions[num] = i
 
-    return -1
+    max_pos = 0
+    for j in range(1, X + 1):
+        if not j in positions.keys():
+            return -1
+
+        max_pos = max(max_pos, positions[j])
+
+    return max_pos
