@@ -6,13 +6,26 @@ score
  - 66%
 """
 
+# correct, but timeout error for a few test cases
+
 
 def solution(N, A):
     counter = [0] * N
+    base = 0
+
     for num in A:
-        if num <= N:
-            counter[num - 1] += 1
+        if num != N + 1:
+            counter[num] += 1
         else:
-            counter = [max(counter)] * N
+            base += max(counter)
+            counter = [0] * N
+
+    for i in range(len(counter)):
+        counter[i] += base
 
     return counter
+
+
+
+
+solution(5, [6, 6, 6, 6, 6, 6])
