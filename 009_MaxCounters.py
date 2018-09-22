@@ -3,29 +3,27 @@ Problem description
  - https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
 
 score
- - 66%
+ - 100%
 """
-
-# correct, but timeout error for a few test cases
 
 
 def solution(N, A):
     counter = [0] * N
     base = 0
+    base_current = 0
 
     for num in A:
         if num != N + 1:
-            counter[num] += 1
+            if counter[num - 1] < base:
+                counter[num - 1] = base
+            counter[num - 1] += 1
+            if base_current < counter[num - 1]:
+                base_current = counter[num - 1]
         else:
-            base += max(counter)
-            counter = [0] * N
+            base = base_current
 
-    for i in range(len(counter)):
-        counter[i] += base
+    for i in range(0, N):
+        if counter[i] < base:
+            counter[i] = base
 
     return counter
-
-
-
-
-solution(5, [6, 6, 6, 6, 6, 6])
