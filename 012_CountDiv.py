@@ -3,14 +3,18 @@ Problem description
  - https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/
 
 score
- - 50% ...correct, but less efficient
+ - 100%
 """
 
 
 def solution(A, B, K):
-    count = 0
-    for num in range(A, B + 1):
-        if num % K == 0:
-            count += 1
+    start = A
 
-    return count
+    while start % K != 0:
+        start += 1
+        if start > B:
+            return 0
+
+    new_B = B - start
+
+    return new_B // K + 1
