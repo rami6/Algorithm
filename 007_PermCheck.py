@@ -2,6 +2,9 @@
 Problem description
  - https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/
 
+Section
+ - Counting Elements
+
 score
  - 100%
 """

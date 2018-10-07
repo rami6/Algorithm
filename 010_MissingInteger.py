@@ -2,6 +2,9 @@
 Problem description
  - https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/
 
+Section
+ - Counting Elements
+
 score
  - 100%
 """

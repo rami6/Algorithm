@@ -2,6 +2,9 @@
 Problem description
  - https://app.codility.com/programmers/lessons/3-time_complexity/frog_jmp/
 
+Section
+ - Time Complexity
+
 score
  - 100%
 """

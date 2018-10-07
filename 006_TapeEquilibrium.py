@@ -2,6 +2,9 @@
 Problem description
  - https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
 
+Section
+ - Time Complexity
+
 score
  - 100%
 """

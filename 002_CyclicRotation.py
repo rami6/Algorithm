@@ -2,6 +2,9 @@
 Problem description
  - https://app.codility.com/programmers/lessons/2-arrays/cyclic_rotation/
 
+Section
+ - Arrays
+
 score
  - 100%
 """
