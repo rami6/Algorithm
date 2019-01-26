@@ -2,9 +2,6 @@
 Problem description
  - https://leetcode.com/problems/isomorphic-strings/
 
-Level
- - Easy
-
 Result
  - Runtime: 56 ms, faster than 98.72% of Python3 online submissions for Isomorphic Strings.
 """
