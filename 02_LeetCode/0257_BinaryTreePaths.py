@@ -28,12 +28,11 @@ class Solution:
     def helper(self, root, path, paths):
         if root.left == None and root.right == None:
             paths.append(path)
-            return paths
+        else:
+            if root.left:
+                self.helper(root.left, f'{path}->{root.left.val}', paths)
 
-        if root.left:
-            self.helper(root.left, f'{path}->{root.left.val}', paths)
-
-        if root.right:
-            self.helper(root.right, f'{path}->{root.right.val}', paths)
+            if root.right:
+                self.helper(root.right, f'{path}->{root.right.val}', paths)
 
         return paths
