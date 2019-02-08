@@ -3,8 +3,8 @@ Problem description
  - https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 Result
- - Runtime: 200 ms, faster than 86.64% of Python online submissions for Intersection of Two Linked Lists.
- - Memory Usage: 65.9 MB, less than 2.88% of Python online submissions for Intersection of Two Linked Lists.
+ - Runtime: 196 ms, faster than 93.20% of Python online submissions for Intersection of Two Linked Lists.
+ - Memory Usage: 66.2 MB, less than 1.32% of Python online submissions for Intersection of Two Linked Lists.
 """
 
 
@@ -26,19 +26,13 @@ class Solution(object):
         list_A = [headA]
         dict_B = {headB: 0}
 
-        i = 0
-        while True:
-            i += 1
-            if headA.next:
-                list_A.append(headA.next)
-                headA = headA.next
+        while headA.next:
+            list_A.append(headA.next)
+            headA = headA.next
 
-            if headB.next:
-                dict_B[headB.next] = i
-                headB = headB.next
-
-            if not headA.next and not headB.next:
-                break
+        while headB.next:
+            dict_B[headB.next] = 0
+            headB = headB.next
 
         for node in list_A:
             if node in dict_B:
