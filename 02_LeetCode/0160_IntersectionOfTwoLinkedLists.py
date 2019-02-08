@@ -3,8 +3,8 @@ Problem description
  - https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 Result
- - Runtime: 620 ms, faster than 1.24% of Python online submissions for Intersection of Two Linked Lists.
- - Memory Usage: 62.7 MB, less than 15.81% of Python online submissions for Intersection of Two Linked Lists.
+ - Runtime: 200 ms, faster than 86.64% of Python online submissions for Intersection of Two Linked Lists.
+ - Memory Usage: 65.9 MB, less than 2.88% of Python online submissions for Intersection of Two Linked Lists.
 """
 
 
@@ -23,22 +23,25 @@ class Solution(object):
         if not headA or not headB:
             return None
 
-        stack_A = [headA]
-        stack_B = [headB]
-
-        while headA.next:
-            stack_A.insert(0, headA.next)
-            headA = headA.next
-
-        while headB.next:
-            stack_B.insert(0, headB.next)
-            headB = headB.next
+        list_A = [headA]
+        dict_B = {headB: 0}
 
         i = 0
-        while i < min(len(stack_A), len(stack_B)) and stack_A[i] == stack_B[i]:
+        while True:
             i += 1
+            if headA.next:
+                list_A.append(headA.next)
+                headA = headA.next
 
-        if i == 0:
-            return None
-        else:
-            return stack_A[i - 1]
+            if headB.next:
+                dict_B[headB.next] = i
+                headB = headB.next
+
+            if not headA.next and not headB.next:
+                break
+
+        for node in list_A:
+            if node in dict_B:
+                return node
+
+        return None
