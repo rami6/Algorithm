@@ -4,7 +4,7 @@ Problem description
 
 Result
  - Runtime: 20 ms, faster than 100.00% of Python online submissions for Univalued Binary Tree.
- - Memory Usage: 7.1 MB, less than 10.01% of Python online submissions for Univalued Binary Tree.
+ - Memory Usage: 7 MB, less than 65.96% of Python online submissions for Univalued Binary Tree.
 """
 
 
@@ -28,10 +28,10 @@ class Solution(object):
             if head.val != first_val:
                 isUnival = False
 
-            if head.left and isUnival:
+            if isUnival and head.left:
                 isUnival = helper(first_val, head.left, isUnival)
 
-            if head.right and isUnival:
+            if isUnival and head.right:
                 isUnival = helper(first_val, head.right, isUnival)
 
             return isUnival
