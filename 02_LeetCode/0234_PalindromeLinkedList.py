@@ -3,8 +3,8 @@ Problem description
  - https://leetcode.com/problems/palindrome-linked-list/
 
 Result
- - Runtime: 76 ms, faster than 76.88% of Python online submissions for Palindrome Linked List.
- - Memory Usage: 28 MB, less than 9.37% of Python online submissions for Palindrome Linked List.
+ - Runtime: 72 ms, faster than 97.57% of Python online submissions for Palindrome Linked List.
+ - Memory Usage: 30.6 MB, less than 5.28% of Python online submissions for Palindrome Linked List.
 """
 
 
@@ -20,12 +20,12 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        if not head or (head and not head.next):
+        if not head:
             return True
 
-        node_vals = [head.val]
-        while head.next:
-            node_vals.append(head.next.val)
+        node_vals = []
+        while head:
+            node_vals.append(head.val)
             head = head.next
 
         for i in range(len(node_vals) // 2):
