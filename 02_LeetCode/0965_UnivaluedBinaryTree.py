@@ -26,7 +26,7 @@ class Solution(object):
 
         def helper(first_val, head, isUnival):
             if head.val != first_val:
-                isUnival = False
+                return False
 
             if isUnival and head.left:
                 isUnival = helper(first_val, head.left, isUnival)
