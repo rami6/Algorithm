@@ -3,8 +3,8 @@ Problem description
  - https://leetcode.com/problems/sort-array-by-parity/
 
 Result
- - Runtime: 100 ms, faster than 20.59% of Python online submissions for Sort Array By Parity.
- - Memory Usage: 11.4 MB, less than 100.00% of Python online submissions for Sort Array By Parity.
+ - Runtime: 56 ms, faster than 99.82% of Python online submissions for Sort Array By Parity.
+ - Memory Usage: 11.5 MB, less than 100.00% of Python online submissions for Sort Array By Parity.
 """
 
 
@@ -14,9 +14,13 @@ class Solution(object):
         :type A: List[int]
         :rtype: List[int]
         """
+        even = []
+        odd = []
 
-        for i in range(len(A)):
-            if A[i] % 2 == 0:
-                A.insert(0, A.pop(i))
+        for num in A:
+            if num % 2 == 0:
+                even.append(num)
+            else:
+                odd.append(num)
 
-        return A
+        return even + odd
