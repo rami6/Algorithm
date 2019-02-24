@@ -3,8 +3,8 @@ Problem description
  - https://leetcode.com/problems/reverse-words-in-a-string-iii/
 
 Result
- - Runtime: 40 ms, faster than 50.33% of Python online submissions for Reverse Words in a String III.
- - Memory Usage: 12 MB, less than 17.46% of Python online submissions for Reverse Words in a String III.
+ - Runtime: 24 ms, faster than 99.93% of Python online submissions for Reverse Words in a String III.
+ - Memory Usage: 12.2 MB, less than 6.35% of Python online submissions for Reverse Words in a String III.
 """
 
 
