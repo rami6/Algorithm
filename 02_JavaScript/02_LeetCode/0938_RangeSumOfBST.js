@@ -3,8 +3,8 @@ Problem description
   - https://leetcode.com/problems/range-sum-of-bst/
 
 Result
-  - Runtime: 180 ms, faster than 82.59% of JavaScript online submissions for Range Sum of BST.
-  - Memory Usage: 67.2 MB, less than 24.80% of JavaScript online submissions for Range Sum of BST.
+  - Runtime: 176 ms, faster than 98.64 % of JavaScript online submissions for Range Sum of BST.
+  - Memory Usage: 67.2 MB, less than 23.20 % of JavaScript online submissions for Range Sum of BST.
 */
 
 /**
@@ -24,22 +24,25 @@ const rangeSumBST = function (root, L, R) {
   if (root) {
     return helper(root, 0);
   }
-  return null;
+  return 0;
 
   function helper(curr, sum) {
-    if (curr) {
-      if (curr.val >= L && curr.val <= R) {
-        sum += curr.val;
-      }
-
-      if (curr.val > L || curr.val >= R) {
-        sum = helper(curr.left, sum);
-      }
-
-      if (curr.val <= L || curr.val < R) {
-        sum = helper(curr.right, sum);
-      }
+    if (!curr) {
+      return sum;
     }
+
+    if (curr.val >= L && curr.val <= R) {
+      sum += curr.val;
+    }
+
+    if (curr.val > L) {
+      sum = helper(curr.left, sum);
+    }
+
+    if (curr.val < R) {
+      sum = helper(curr.right, sum);
+    }
+
     return sum;
   }
 };
