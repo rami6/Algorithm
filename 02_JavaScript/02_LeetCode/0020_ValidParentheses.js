@@ -23,16 +23,12 @@ const isValid = function (s) {
   for (const c of s) {
     if (c in parenthesisDict) {
       stack.push(c);
-    } else if (stack.length > 0 && parenthesisDict[stack[stack.length - 1]] === c) {
+    } else if (parenthesisDict[stack[stack.length - 1]] === c) {
       stack.pop();
     } else {
       return false;
     }
   }
-
-  if (stack.length === 0) {
-    return true;
-  }
-
-  return false;
+  
+  return stack.length === 0;
 };
