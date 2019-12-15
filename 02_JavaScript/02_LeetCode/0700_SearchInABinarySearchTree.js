@@ -38,3 +38,11 @@ const searchBST = function (root, val) {
 
   return null;
 };
+
+const searchBSTWithLoop = function (root, val) {
+  while (root && root.val !== val) {
+    root = root.val > val ? root.left : root.right;
+  }
+
+  return root;
+};
